@@ -13,6 +13,44 @@ class Time
     const FormatDate = 'Y-m-d';
 
     const FormatUsDate = 'm/d/Y';
+
+
+    /**
+     * @param $time
+     * @param string $format
+     *
+     * @return false|string
+     */
+    public static function format($time, $format = self::FormatDateWithTime)
+    {
+        return date($format, $time);
+    }
+
+    /**
+     * @param $time
+     * @param $months
+     *
+     * @return bool|string
+     */
+    public static function timeAddMonths($time, $months)
+    {
+        $time = strtotime("$time + {$months} month");
+
+        return self::format($time);
+    }
+
+    /**
+     * @param $time
+     * @param $days
+     * @return false|string
+     */
+    public static function timeAddDays($time, $days)
+    {
+        $time = strtotime("$time + {$days} day");
+
+        return self::format($time);
+    }
+
     /**
      * 计算两个日期之间的月份和天数差
      * @param $date1
