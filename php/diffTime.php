@@ -149,7 +149,7 @@ class Time
     }
 
     /**
-     * 计算当月流量开始时间
+     * 换算之前某个时间为当前月份的时间
      * @param $date
      * @return false|string
      */
